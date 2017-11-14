@@ -69,3 +69,9 @@ C:\Users\Tom\source\website\Vidly\Vidly\bin\Microsoft.AI.WindowsServer.xml
 C:\Users\Tom\source\website\Vidly\Vidly\bin\Microsoft.AI.Web.xml
 C:\Users\Tom\source\website\Vidly\Vidly\obj\Debug\Vidly.dll
 C:\Users\Tom\source\website\Vidly\Vidly\obj\Debug\Vidly.pdb
+C:\Users\Tom\source\website\Vidly\Vidly\obj\Debug\Vidly.Migrations.InitialModel.resources
+C:\Users\Tom\source\website\Vidly\Vidly\obj\Debug\Vidly.csproj.GenerateResource.Cache
+C:\Users\Tom\source\website\Vidly\Vidly\obj\Debug\Vidly.Migrations.AddIsSubscribedToCustomer.resources
+C:\Users\Tom\source\website\Vidly\Vidly\obj\Debug\Vidly.Migrations.AddMembershipType.resources
+C:\Users\Tom\source\website\Vidly\Vidly\obj\Debug\Vidly.Migrations.PopulateMembershipTypes.resources
+C:\Users\Tom\source\website\Vidly\Vidly\obj\Debug\Vidly.Migrations.ApplyAnnotationsToCustomerName.resources
