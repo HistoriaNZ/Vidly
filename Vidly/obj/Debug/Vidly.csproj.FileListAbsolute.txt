@@ -79,3 +79,6 @@ C:\Users\Tom\source\website\Vidly\Vidly\obj\Debug\Vidly.Migrations.AddNameToMemb
 C:\Users\Tom\source\website\Vidly\Vidly\obj\Debug\Vidly.Migrations.UpdateMembershipTypeNames.resources
 C:\Users\Tom\source\website\Vidly\Vidly\obj\Debug\Vidly.Migrations.AddBirthdateToCustomer.resources
 C:\Users\Tom\source\website\Vidly\Vidly\obj\Debug\Vidly.Migrations.UpdateJohnBirthdate.resources
+C:\Users\Tom\source\website\Vidly\Vidly\obj\Debug\Vidly.Migrations.AddMoviesAndGenre.resources
+C:\Users\Tom\source\website\Vidly\Vidly\obj\Debug\Vidly.Migrations.PopulateGenres.resources
+C:\Users\Tom\source\website\Vidly\Vidly\obj\Debug\Vidly.Migrations.PopulateMovies.resources

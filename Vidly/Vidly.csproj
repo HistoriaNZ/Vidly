@@ -233,9 +233,22 @@
     <Compile Include="Migrations\201711140335224_UpdateJohnBirthdate.Designer.cs">
       <DependentUpon>201711140335224_UpdateJohnBirthdate.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201711140631133_AddMoviesAndGenre.cs" />
+    <Compile Include="Migrations\201711140631133_AddMoviesAndGenre.Designer.cs">
+      <DependentUpon>201711140631133_AddMoviesAndGenre.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711140635486_PopulateGenres.cs" />
+    <Compile Include="Migrations\201711140635486_PopulateGenres.Designer.cs">
+      <DependentUpon>201711140635486_PopulateGenres.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711140638139_PopulateMovies.cs" />
+    <Compile Include="Migrations\201711140638139_PopulateMovies.Designer.cs">
+      <DependentUpon>201711140638139_PopulateMovies.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
+    <Compile Include="Models\Genre.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\MembershipType.cs" />
@@ -352,6 +365,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201711140335224_UpdateJohnBirthdate.resx">
       <DependentUpon>201711140335224_UpdateJohnBirthdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711140631133_AddMoviesAndGenre.resx">
+      <DependentUpon>201711140631133_AddMoviesAndGenre.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711140635486_PopulateGenres.resx">
+      <DependentUpon>201711140635486_PopulateGenres.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711140638139_PopulateMovies.resx">
+      <DependentUpon>201711140638139_PopulateMovies.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
