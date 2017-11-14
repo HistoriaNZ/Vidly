@@ -75,3 +75,7 @@ C:\Users\Tom\source\website\Vidly\Vidly\obj\Debug\Vidly.Migrations.AddIsSubscrib
 C:\Users\Tom\source\website\Vidly\Vidly\obj\Debug\Vidly.Migrations.AddMembershipType.resources
 C:\Users\Tom\source\website\Vidly\Vidly\obj\Debug\Vidly.Migrations.PopulateMembershipTypes.resources
 C:\Users\Tom\source\website\Vidly\Vidly\obj\Debug\Vidly.Migrations.ApplyAnnotationsToCustomerName.resources
+C:\Users\Tom\source\website\Vidly\Vidly\obj\Debug\Vidly.Migrations.AddNameToMembershipType.resources
+C:\Users\Tom\source\website\Vidly\Vidly\obj\Debug\Vidly.Migrations.UpdateMembershipTypeNames.resources
+C:\Users\Tom\source\website\Vidly\Vidly\obj\Debug\Vidly.Migrations.AddBirthdateToCustomer.resources
+C:\Users\Tom\source\website\Vidly\Vidly\obj\Debug\Vidly.Migrations.UpdateJohnBirthdate.resources
