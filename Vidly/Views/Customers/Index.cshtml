@@ -24,7 +24,7 @@ else
             {
                 <tr>
                     <td>
-                        @Html.ActionLink(customer.Name, "Details",
+                        @Html.ActionLink(customer.Name, "Edit",
                        "Customers", new { id = customer.Id }, null)
                     </td>
                     <td>
@@ -34,4 +34,7 @@ else
             }
         </tbody>
     </table>
+    <a href="~/customers/new">
+        <input type="button" value="New">
+    </a>
 }
