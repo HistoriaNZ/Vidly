@@ -36,14 +36,14 @@ namespace Vidly.Controllers
         //movies base
         public ViewResult Index()
         {
-            var movies = _context.Movies.ToList();
+            var movies = _context.Movies.Include(m => m.Genre).ToList();
 
             return View(movies);
         }
 
         public ActionResult Details(int? id)
         {
-            var movie = _context.Movies.SingleOrDefault(mov => mov.Id == id);
+            var movie = _context.Movies.Include(m => m.Genre).SingleOrDefault(mov => mov.Id == id);
 
             if (movie == null)
             {
