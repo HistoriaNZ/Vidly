@@ -1,11 +1,20 @@
 ﻿@model Vidly.ViewModels.CustomerFormViewModel
 
 @{
-    ViewBag.Title = "New Customer";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>New Customer</h2>
+@if (Model.Customer == null)
+{
+    ViewBag.Title = "New Customer";
+    <h2>New Customer</h2>
+}
+else
+{
+    ViewBag.Title = "Edit Customer";
+    <h2>Edit Customer</h2>
+}
+
 
 @using (Html.BeginForm("Save", "Customers"))
 {
