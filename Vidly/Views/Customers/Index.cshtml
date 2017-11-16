@@ -15,9 +15,9 @@ else
     <p>
         @Html.ActionLink("New Customer", "New", "Customers", null, new { @class = "btn btn-primary" })
     </p>
-    <table class="table-bordered table-hover">
+    <table class="table-bordered table-hover" width="100%">
         <thead>
-            <tr>
+            <tr class="row">
                 <th>Customer</th>
                 <th>Discount Rate</th>
             </tr>
@@ -25,7 +25,7 @@ else
         <tbody>
             @foreach (var customer in Model)
             {
-                <tr>
+                <tr class="row">
                     <td>
                         @Html.ActionLink(customer.Name, "Edit",
                        "Customers", new { id = customer.Id }, null)
