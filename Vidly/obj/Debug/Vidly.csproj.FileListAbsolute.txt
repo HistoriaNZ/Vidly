@@ -82,3 +82,9 @@ C:\Users\Tom\source\website\Vidly\Vidly\obj\Debug\Vidly.Migrations.UpdateJohnBir
 C:\Users\Tom\source\website\Vidly\Vidly\obj\Debug\Vidly.Migrations.AddMoviesAndGenre.resources
 C:\Users\Tom\source\website\Vidly\Vidly\obj\Debug\Vidly.Migrations.PopulateGenres.resources
 C:\Users\Tom\source\website\Vidly\Vidly\obj\Debug\Vidly.Migrations.PopulateMovies.resources
+C:\Users\Tom\source\website\Vidly\Vidly\bin\System.Net.Http.Formatting.dll
+C:\Users\Tom\source\website\Vidly\Vidly\bin\System.Web.Http.dll
+C:\Users\Tom\source\website\Vidly\Vidly\bin\System.Web.Http.WebHost.dll
+C:\Users\Tom\source\website\Vidly\Vidly\bin\System.Net.Http.Formatting.xml
+C:\Users\Tom\source\website\Vidly\Vidly\bin\System.Web.Http.xml
+C:\Users\Tom\source\website\Vidly\Vidly\bin\System.Web.Http.WebHost.xml
