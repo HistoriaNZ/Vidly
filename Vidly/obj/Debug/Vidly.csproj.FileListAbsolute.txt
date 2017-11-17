@@ -88,3 +88,5 @@ C:\Users\Tom\source\website\Vidly\Vidly\bin\System.Web.Http.WebHost.dll
 C:\Users\Tom\source\website\Vidly\Vidly\bin\System.Net.Http.Formatting.xml
 C:\Users\Tom\source\website\Vidly\Vidly\bin\System.Web.Http.xml
 C:\Users\Tom\source\website\Vidly\Vidly\bin\System.Web.Http.WebHost.xml
+C:\Users\Tom\source\website\Vidly\Vidly\bin\AutoMapper.dll
+C:\Users\Tom\source\website\Vidly\Vidly\bin\AutoMapper.xml
