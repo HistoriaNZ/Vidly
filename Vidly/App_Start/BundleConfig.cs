@@ -14,7 +14,8 @@ namespace Vidly
                         "~/scripts/bootbox.js",
                         "~/Scripts/respond.js",
                         "~/scripts/datatables/jquery.datatables.js",
-                        "~/scripts/datatables/datatables.bootstrap.js"
+                        "~/scripts/datatables/datatables.bootstrap.js",
+                        "~/scripts/bootstrap-datepicker.js"
                       ));
 
             bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
