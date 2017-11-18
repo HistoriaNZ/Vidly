@@ -21,7 +21,9 @@ namespace Vidly.App_Start
             Mapper.CreateMap<Movie, MovieDto>();
             // Don't map DTO Id to _context Id when updating a movie.
             Mapper.CreateMap<MovieDto, Movie>().
-                ForMember(m => m.Id, opt => opt.Ignore());    
+                ForMember(m => m.Id, opt => opt.Ignore());
+
+            Mapper.CreateMap<MembershipType, MembershipTypeDto>();
         }
     } 
 }
