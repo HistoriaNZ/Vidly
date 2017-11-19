@@ -15,7 +15,7 @@ namespace Vidly.Models
         public string Name { get; set; }
 
         [Required]
-        [Display(Name = "Release Date (dd/mm/yyyy)")]
+        [Display(Name = "Release Date (dd MMM yyyy)")]
         public DateTime ReleaseDate { get; set; }
 
         [Required]
