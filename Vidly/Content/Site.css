@@ -34,3 +34,12 @@ textarea {
 .validation-summary-errors {
     color: red;
 }
+
+#Google {
+    background-color: transparent;
+    background-size: cover;
+    width: 191px;
+    height: 46px;
+    padding: 0px;
+    border: 1px;
+}
