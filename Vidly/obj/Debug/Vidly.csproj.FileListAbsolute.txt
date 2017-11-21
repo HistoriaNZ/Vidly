@@ -94,3 +94,9 @@ C:\Users\Tom\source\website\Vidly\Vidly\obj\Debug\Vidly.Migrations.SeedUsers.res
 C:\Users\Tom\source\website\Vidly\Vidly\obj\Debug\Vidly.Migrations.AddDrivingLicenseToApplicationUser.resources
 C:\Users\Tom\source\website\Vidly\Vidly\obj\Debug\Vidly.Migrations.AddPhoneNumberToApplicationUser.resources
 C:\Users\Tom\source\website\Vidly\Vidly\bin\Owin.Security.Providers.dll
+C:\Users\Tom\source\website\Vidly\Vidly\bin\Glimpse.Ado.dll
+C:\Users\Tom\source\website\Vidly\Vidly\bin\Glimpse.AspNet.dll
+C:\Users\Tom\source\website\Vidly\Vidly\bin\Glimpse.Core.dll
+C:\Users\Tom\source\website\Vidly\Vidly\bin\Glimpse.EF6.dll
+C:\Users\Tom\source\website\Vidly\Vidly\bin\Glimpse.Mvc5.dll
+C:\Users\Tom\source\website\Vidly\Vidly\obj\Debug\Vidly.Migrations.AddRentalsToApplication.resources
