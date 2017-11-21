@@ -7,12 +7,11 @@ using System.Net.Http;
 using System.Web.Http;
 using Vidly.Models;
 using Vidly.Dtos;
-using AutoMapper;
 using System.Data.Entity;
 
 namespace Vidly.Controllers.Api
 {
-    public class RentalsController
+    public class RentalsController : ApiController
     {
         private ApplicationDbContext _context;
 
@@ -23,7 +22,31 @@ namespace Vidly.Controllers.Api
         [HttpPost]
         public IHttpActionResult Create(NewRentalDto newRental)
         {
-            throw new NotImplementedException();
+            if (!ModelState.IsValid)
+            {
+                return BadRequest();
+            }
+
+            var customer = _context.Customers.SingleOrDefault(c => c.Id == newRental.custId);
+
+            if (customer == null)
+            {
+                return BadRequest("Invalid customer ID.");
+            }
+
+            var movies = _context.Movies.Where(m => newRental.movieIds.Contains(m.Id));
+
+            foreach (var movie in movies)
+            {
+                var rental = new Rental();
+                rental.DateRented = DateTime.Now;
+                rental.Customer = customer;
+                rental.Movie = movie;
+
+                _context.Rentals.Add(rental);
+            }
+            _context.SaveChanges();
+            return Ok();
         }
     }
 }
