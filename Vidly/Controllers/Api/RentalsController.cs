@@ -27,6 +27,11 @@ namespace Vidly.Controllers.Api
                 return BadRequest();
             }
 
+            if (newRental.movieIds.Count == 0)
+            {
+                return BadRequest("You haven't selected any movies.");
+            }
+
             var customer = _context.Customers.SingleOrDefault(c => c.Id == newRental.custId);
 
             if (customer == null)
@@ -34,10 +39,22 @@ namespace Vidly.Controllers.Api
                 return BadRequest("Invalid customer ID.");
             }
 
-            var movies = _context.Movies.Where(m => newRental.movieIds.Contains(m.Id));
+
+
+            var movies = _context.Movies.Where(m => newRental.movieIds.Contains(m.Id)).ToList();
+
+            if (movies.Count != newRental.movieIds.Count)
+            {
+                return BadRequest("One or more movies are invalid.");
+            }
 
             foreach (var movie in movies)
             {
+                if (movie.NumberAvailable == 0)
+                {
+                    return BadRequest("This movie is not available.");
+                }
+
                 var rental = new Rental();
                 rental.DateRented = DateTime.Now;
                 rental.Customer = customer;
