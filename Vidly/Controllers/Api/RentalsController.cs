@@ -17,6 +17,7 @@ namespace Vidly.Controllers.Api
 
         public RentalsController()
         {
+            _context = new ApplicationDbContext();
         }
 
         [HttpPost]
@@ -24,7 +25,7 @@ namespace Vidly.Controllers.Api
         {
             if (!ModelState.IsValid)
             {
-                return BadRequest();
+                return BadRequest("Something's wrong with the submission.");
             }
 
             if (newRental.movieIds.Count == 0)

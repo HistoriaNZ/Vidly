@@ -6,7 +6,7 @@
 
 <h2>New Rental</h2>
 
-<form>
+<form id="newRental">
     <div class="form-group">
         <label>Customer</label>
         <div class="tt-container">
@@ -32,9 +32,12 @@
 
 @section scripts {
     <script>
+
         $(document).ready(function () {
 
-            var vm = {};
+            var vm = {
+                movieIds: [],
+            };
 
             var customers = new Bloodhound({
                 datumTokenizer: Bloodhound.tokenizers.obj.whitespace('value'),
@@ -53,38 +56,46 @@
                     display: 'name',
                     source: customers
                 }).on("typeahead:select", function (e, customer) {
-                    vm.customerId = customer.id;
+                    vm.custId = customer.id;
                 });
+
+            var movies = new Bloodhound({
+                datumTokenizer: Bloodhound.tokenizers.obj.whitespace('value'),
+                queryTokenizer: Bloodhound.tokenizers.whitespace,
+                remote: {
+                    url: '/api/movies?query=%QUERY',
+                    wildcard: '%QUERY'
+                }
+            });
+
+            $('#movie').typeahead({
+                minLength: 3,
+                highlight: true
+            }, {
+                    name: 'movies',
+                    display: 'name',
+                    source: movies
+                }).on("typeahead:select", function (e, movie) {
+                    $('#moviesList').append("<li class='list-group-item'>" + movie.name + "</li>");
+                    $('#movie').typeahead("val", "");
+                    vm.movieIds.push(movie.id);
+                });
+
+            $("#newRental").submit(function (e) {
+                e.preventDefault();
+
+                $.ajax({
+                    url: "/api/rentals/",
+                    method: "post",
+                    data: vm
+                })
+                .done(function () {
+                    console.log("sumbitted!");
+                })
+                .fail(function () {
+
+                });
+            });
         });
-    </script>
-
-    <script>
-                $(document).ready(function () {
-
-                    var vm = {
-                        movieIds: []};
-
-                    var movies = new Bloodhound({
-                        datumTokenizer: Bloodhound.tokenizers.obj.whitespace('value'),
-                        queryTokenizer: Bloodhound.tokenizers.whitespace,
-                        remote: {
-                            url: '/api/movies?query=%QUERY',
-                            wildcard: '%QUERY'
-                        }
-                    });
-
-                    $('#movie').typeahead({
-                        minLength: 3,
-                        highlight: true
-                    }, {
-                            name: 'movies',
-                            display: 'name',
-                            source: movies
-                        }).on("typeahead:select", function (e, movie) {
-                            $('#moviesList').append("<li class='list-group-item'>" + movie.name + "</li>");
-                            $('#movie').typeahead("val", "");
-                            vm.movieIds.push(movie.id);
-                        });
-                });
     </script>
 }
