@@ -6,6 +6,7 @@ using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin.Security.Google;
 using Owin;
 using Vidly.Models;
+using System.Configuration;
 
 namespace Vidly
 {
@@ -60,8 +61,8 @@ namespace Vidly
 
             app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
             {
-                ClientId = "154764443352-aon0bove31nueocau3132439rukd0mhb.apps.googleusercontent.com",
-                ClientSecret = "NByC_RTkelHNB0yRxu_HEWsl"
+                ClientId = ConfigurationManager.AppSettings["GoogleAppId"],
+                ClientSecret = ConfigurationManager.AppSettings["GoogleAppSecret"]
             });
         }
     }
