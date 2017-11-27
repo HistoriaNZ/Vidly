@@ -26,7 +26,7 @@ else
     </div>
     <div class="form-group">
         @Html.LabelFor(m => m.ReleaseDate)
-        @Html.TextBoxFor(m => m.ReleaseDate, "{0:d MMM yyyy}", new { @class = "form-control" })
+        @Html.TextBoxFor(m => m.ReleaseDate, "{0:d MMM yyyy}", new { @class = "form-control datepicker" })
         @Html.ValidationMessageFor(m => m.ReleaseDate)
     </div>
 
@@ -51,4 +51,13 @@ else
 @section scripts
 {
     @Scripts.Render("~/bundles/jqueryval")
+
+    <script>
+        $(document).ready(function () {
+            $('#ReleaseDate').datepicker({
+                format: 'dd M yyyy',
+                orientation: "bottom left"
+            });
+        });
+    </script>
 }

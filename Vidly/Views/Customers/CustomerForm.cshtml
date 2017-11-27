@@ -34,7 +34,7 @@ else
     <div class="form-group">
         @Html.LabelFor(m => m.Customer.Birthdate)
         @Html.TextBoxFor(m => m.Customer.Birthdate, "{0:d MMM yyyy}", 
-            new { @class = "form-control" })
+            new { @class = "form-control datepicker" })
         @Html.ValidationMessageFor(m => m.Customer.Birthdate)
     </div>
     <div class="checkbox">
@@ -53,8 +53,9 @@ else
 
     <script>
         $(document).ready(function () {
-            $('.datepicker').datepicker({
-                format: 'dd/mm/yyyy'
+            $('#Customer_Birthdate').datepicker({
+                format: 'dd M yyyy',
+                orientation: "bottom left"
             });
         });
     </script>
