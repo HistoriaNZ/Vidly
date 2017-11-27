@@ -19,7 +19,7 @@ Packages/Technologies used:
 To-Do List:
 
 * Re-implement random movie selection.
-* Add DatePicker calendar to select dates in new user/movie views.
+* Add DatePicker calendar to select dates in new user/movie views. [Completed 27/11/2017]
 * Add video returns capability and returns front-end.
 * Allow admin account to change the privileges of existing accounts.
 * Implement API integration with a movie database (possibly IMDB?) to flesh out movie details pages.
