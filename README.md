@@ -24,5 +24,6 @@ To-Do List:
 * Allow admin account to change the privileges of existing accounts.
 * Implement API integration with a movie database (possibly IMDB?) to flesh out movie details pages.
 * Improve the look and feel of front-end (fancy HTML! jQuery and JavaScript practice! Learning!).
+* Organise scripts into separate files.
 
 
