@@ -13,6 +13,7 @@ namespace Vidly.Controllers
     public class MoviesController : Controller
     {
         private ApplicationDbContext _context;
+        private static Random rand = new Random();
 
         public MoviesController()
         {
@@ -61,6 +62,15 @@ namespace Vidly.Controllers
             {
                 return View(movie);
             }
+        }
+
+        public ActionResult Random()
+        {
+            var movies = _context.Movies.ToList();
+
+            var randIndex = rand.Next(movies.Count);
+
+            return RedirectToAction("Details", "Movies", new { movies[randIndex].Id });
         }
 
         [Route("movies/released/{year:regex(\\d{4})}/{month:regex(\\d{2}):range(1,12)}")]

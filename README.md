@@ -18,7 +18,7 @@ Packages/Technologies used:
 
 To-Do List:
 
-* Re-implement random movie selection.
+* Re-implement random movie selection. [Completed 27/11/2017]
 * Add DatePicker calendar to select dates in new user/movie views. [Completed 27/11/2017]
 * Add video returns capability and returns front-end.
 * Allow admin account to change the privileges of existing accounts.
