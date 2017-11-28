@@ -20,6 +20,14 @@ namespace Vidly.Controllers.Api
             _context = new ApplicationDbContext();
         }
 
+        public IHttpActionResult GetRentals()
+        {
+            var rentals = _context.Rentals.
+                Where(r => r.DateReturned == null).ToList();
+
+            return Ok(rentals);
+        }
+
         [HttpPost]
         public IHttpActionResult Create(NewRentalDto newRental)
         {

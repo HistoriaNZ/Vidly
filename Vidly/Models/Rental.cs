@@ -25,8 +25,12 @@ namespace Vidly.Models
         [Display(Name = "Customer")]
         public Customer Customer { get; set; }
 
+        public int CustomerId { get; set; }
+
         [Required]
         [Display(Name = "Movies")]
         public Movie Movie { get; set; }
+
+        public int MovieId { get; set; }
     }
 }

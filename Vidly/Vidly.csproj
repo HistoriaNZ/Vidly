@@ -310,6 +310,10 @@
     <Compile Include="Migrations\201711210808363_AddNumberAvailableToMoviesModel.Designer.cs">
       <DependentUpon>201711210808363_AddNumberAvailableToMoviesModel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201711281542302_AddCustomerIdAndMovieIdToRentalsExplicitly.cs" />
+    <Compile Include="Migrations\201711281542302_AddCustomerIdAndMovieIdToRentalsExplicitly.Designer.cs">
+      <DependentUpon>201711281542302_AddCustomerIdAndMovieIdToRentalsExplicitly.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
     <Compile Include="Models\ApplicationUser.cs" />
@@ -749,6 +753,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201711210808363_AddNumberAvailableToMoviesModel.resx">
       <DependentUpon>201711210808363_AddNumberAvailableToMoviesModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711281542302_AddCustomerIdAndMovieIdToRentalsExplicitly.resx">
+      <DependentUpon>201711281542302_AddCustomerIdAndMovieIdToRentalsExplicitly.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
