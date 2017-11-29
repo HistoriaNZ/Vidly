@@ -13,5 +13,10 @@ namespace Vidly.Controllers
         {
             return View();
         }
+
+        public ActionResult Return()
+        {
+            return View();
+        }
     }
 }

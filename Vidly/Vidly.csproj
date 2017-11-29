@@ -339,6 +339,7 @@
     <Compile Include="ViewModels\RandomMovieViewModel.cs" />
     <Compile Include="ViewModels\RegisterViewModels.cs" />
     <Compile Include="ViewModels\ResetPasswordViewModel.cs" />
+    <Compile Include="ViewModels\ReturnViewModel.cs" />
     <Compile Include="ViewModels\SendCodeViewModel.cs" />
     <Compile Include="ViewModels\VerifyCodeViewModel.cs" />
   </ItemGroup>
@@ -683,6 +684,7 @@
     <Content Include="Views\Movies\MovieForm.cshtml" />
     <Content Include="Views\Movies\ReadOnlyList.cshtml" />
     <Content Include="Views\Rentals\New.cshtml" />
+    <Content Include="Views\Rentals\Return.cshtml" />
     <None Include="Web.Testing.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

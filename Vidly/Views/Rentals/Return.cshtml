@@ -1,0 +1,17 @@
+﻿@model dynamic
+@{
+    ViewBag.Title = "Return a Movie";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Rental Return</h2>
+<body>
+    <form id="rentalReturn">
+        <div class="form-group">
+            <label>Customer</label>
+            <div class="tt-container">
+                <input id="customer" name="customer" data-rule-validCustomer="true" required type="text" value="" class="form-control" placeholder="Customer's Name" />
+            </div>
+        </div>
+
+</body>
