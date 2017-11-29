@@ -54,13 +54,17 @@
                 }).on("typeahead:select", function (e, customer) {
                     vm.custId = customer.id;
                     var rUrl = "/api/rentals/" + vm.custId;
-                    console.log(rUrl);
                     $.ajax({
                         url: rUrl,
-                        method: "get", success: function () {
-                            $("#rentalsList").append("<li class='list-group-item'>" + "Hooray" + "</li>");
+                        method: "get",
+                        success: function (response) {
+                            console.log(response);
+                            $.each(response, function (key, value) {
+                                var rentalString = "Rental " + (key + 1) + ": " + JSON.stringify(value);
+                                $("#rentalsList").append("<li class='list-group-item'>" + rentalString + "</li>");
+                            });
                         }
-                    })
+                    });
                 });
 
         });
