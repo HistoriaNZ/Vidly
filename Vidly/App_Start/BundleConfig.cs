@@ -18,7 +18,8 @@ namespace Vidly
                         "~/scripts/datatables/datatables.bootstrap.js",
                         "~/scripts/bootstrap-datepicker.js",
                         "~/scripts/typeahead.bundle.js",
-                        "~/scripts/toastr.js"
+                        "~/scripts/toastr.js",
+                        "~/scripts/dateFormat.js"
                       ));
 
             bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(

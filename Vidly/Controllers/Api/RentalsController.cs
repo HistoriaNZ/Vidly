@@ -24,7 +24,7 @@ namespace Vidly.Controllers.Api
         //GET api/rentals
         public IHttpActionResult GetRentals()
         {
-            var rentals = _context.Rentals.
+            var rentals = _context.Rentals.Include(r => r.Movie).
                 Where(r => r.DateReturned == null).ToList();
 
             var mappedRentals = rentals.Select(Mapper.Map<Rental, ActiveRentalDto>);
@@ -41,7 +41,7 @@ namespace Vidly.Controllers.Api
             {
                 return NotFound();
             }
-            var activeRentalDtos = rentals.ToList().
+            var activeRentalDtos = rentals.Include(r => r.Movie).ToList().
                Select(Mapper.Map<Rental, ActiveRentalDto>);
 
             return Ok(activeRentalDtos);

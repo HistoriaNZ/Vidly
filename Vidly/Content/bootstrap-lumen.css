@@ -8693,3 +8693,7 @@ a.list-group-item-danger.active {
 .popover {
     color: #555555;
 }
+
+#rentalButtons {
+    display: block;
+}

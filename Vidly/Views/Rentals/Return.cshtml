@@ -17,7 +17,7 @@
         <label>Active Rentals:</label>
         <div class="row">
             <div class="col-md-4 col-sm-4">
-                <ul id="rentalsList" class="list-group"></ul>
+                <div id="rentalsList" class='btn-group' data-toggle='buttons'></div>
             </div>
         </div>
     </form>
@@ -27,6 +27,7 @@
 @section scripts {
     @Scripts.Render("~/Bundles/jqueryval")
 
+    <script src="~/Scripts/dateFormat.js" type="text/javascript"></script>
     <script>
 
         $(document).ready(function () {
@@ -59,9 +60,12 @@
                         method: "get",
                         success: function (response) {
                             console.log(response);
+                            $("#rentalsList").append("<div class='btn-group' data-toggle='buttons'>")
                             $.each(response, function (key, value) {
-                                var rentalString = "Rental " + (key + 1) + ": " + JSON.stringify(value);
-                                $("#rentalsList").append("<li class='list-group-item'>" + rentalString + "</li>");
+                                var rentalDate = new Date(value["dateRented"]).toDateString();
+                                var movieName = value["movie"]["name"]
+                                var rentalString = movieName + ", " + rentalDate;
+                                $("#rentalsList").append("<div><label class='btn btn-primary btn-lg btn-block'><input type='checkbox'>" + rentalString + "</label></div>");
                             });
                         }
                     });
