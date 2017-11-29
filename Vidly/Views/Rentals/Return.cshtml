@@ -14,4 +14,56 @@
             </div>
         </div>
 
+        <label>Active Rentals:</label>
+        <div class="row">
+            <div class="col-md-4 col-sm-4">
+                <ul id="rentalsList" class="list-group"></ul>
+            </div>
+        </div>
+    </form>
+
 </body>
+
+@section scripts {
+    @Scripts.Render("~/Bundles/jqueryval")
+
+    <script>
+
+        $(document).ready(function () {
+
+            var vm = {
+                returns: [],
+            };
+
+            var customers = new Bloodhound({
+                datumTokenizer: Bloodhound.tokenizers.obj.whitespace('value'),
+                queryTokenizer: Bloodhound.tokenizers.whitespace,
+                remote: {
+                    url: '/api/customers?query=%QUERY',
+                    wildcard: '%QUERY'
+                }
+            });
+
+            $('#customer').typeahead({
+                minLength: 3,
+                highlight: true
+            }, {
+                    name: 'customers',
+                    display: 'name',
+                    source: customers
+                }).on("typeahead:select", function (e, customer) {
+                    vm.custId = customer.id;
+                    var rUrl = "/api/rentals/" + vm.custId;
+                    console.log(rUrl);
+                    $.ajax({
+                        url: rUrl,
+                        method: "get", success: function () {
+                            $("#rentalsList").append("<li class='list-group-item'>" + "Hooray" + "</li>");
+                        }
+                    })
+                });
+
+        });
+
+    </script>
+}
