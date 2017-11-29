@@ -8,6 +8,7 @@ using System.Web.Http;
 using Vidly.Models;
 using Vidly.Dtos;
 using System.Data.Entity;
+using AutoMapper;
 
 namespace Vidly.Controllers.Api
 {
@@ -20,12 +21,31 @@ namespace Vidly.Controllers.Api
             _context = new ApplicationDbContext();
         }
 
+        //GET api/rentals
         public IHttpActionResult GetRentals()
         {
             var rentals = _context.Rentals.
                 Where(r => r.DateReturned == null).ToList();
 
-            return Ok(rentals);
+            var mappedRentals = rentals.Select(Mapper.Map<Rental, ActiveRentalDto>);
+
+            return Ok(mappedRentals);
+        }
+
+        //Takes customerId as parameter, NOT rental Id!
+        public IHttpActionResult GetRental(int id)
+        {
+            var rentals = _context.Rentals.Where(r => r.CustomerId == id);
+
+            if (rentals == null)
+            {
+                return NotFound();
+            }
+            var activeRentalDtos = rentals.ToList().
+               Select(Mapper.Map<Rental, ActiveRentalDto>);
+
+            return Ok(activeRentalDtos);
+
         }
 
         [HttpPost]
