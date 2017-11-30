@@ -9,6 +9,8 @@ namespace Vidly.Dtos
 {
     public class ActiveRentalDto
     {
+        public int Id { get; set; }
+
         [Required]
         public DateTime DateRented { get; set; }
 

@@ -94,5 +94,38 @@ namespace Vidly.Controllers.Api
             _context.SaveChanges();
             return Ok();
         }
+
+        /* [HttpPut]
+        public IHttpActionResult Return(NewRentalDto rentalDto)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest();
+            }
+
+            var rentalsInDb = _context.Rentals.Where(r => r.CustomerId == rentalDto.custId);
+
+            if (rentalsInDb == null)
+            {
+                return NotFound();
+            }
+
+            foreach (var rental in rentalsInDb)
+            {
+                rental.DateReturned = DateTime.Now;
+            }
+
+            _context.SaveChanges();
+
+            return Ok();
+        }
+        */
+
+        [HttpPut]
+        public IHttpActionResult Return(NewRentalDto rentalDto)
+        {
+            return Ok("movie list length: " + rentalDto.movieIds.Count());
+        }
+
     }
 }
