@@ -122,9 +122,27 @@ namespace Vidly.Controllers.Api
         */
 
         [HttpPut]
-        public IHttpActionResult Return(NewRentalDto rentalDto)
+        public IHttpActionResult Return(ReturnsDto returnsDto)
         {
-            return Ok("movie list length: " + rentalDto.movieIds.Count());
+            //return Ok("movie list length: " + rentalDto.movieIds.Count());
+
+            if (!ModelState.IsValid)
+            {
+                throw new HttpResponseException(HttpStatusCode.BadRequest);
+            }
+
+            var rentalsInDb = _context.Rentals.Where(r => returnsDto.RentalIds.Contains(r.Id));
+
+            int counter = 0;
+
+            foreach (var rental in rentalsInDb)
+            {
+                counter += 1;
+                rental.DateReturned = DateTime.Now;
+                //WHY IS .SAVECHANGES RETURNING AN HTTP 500 RESPONSE. :(
+            }
+
+            return Ok(counter);
         }
 
     }

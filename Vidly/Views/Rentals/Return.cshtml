@@ -33,7 +33,7 @@
         $(document).ready(function () {
 
             var vm = {
-                movieIds: [],
+                rentalIds: [],
             };
 
             var customers = new Bloodhound({
@@ -75,7 +75,7 @@
             $("#rentalReturn").validate({
                 submitHandler: function () {
                     $('input:checked').each(function () {
-                        vm.movieIds.push($(this).attr('id'));
+                        vm.rentalIds.push($(this).attr('id'));
                     });
 
                     $.ajax({
@@ -87,7 +87,7 @@
                             toastr.success("Rentals updated successfully!");
                             $("#customer").typeahead("val", "");
                             $("#rentalsList").empty();
-                            console.log("Data sent:" + vm.custId + ", " + vm.movieIds);
+                            console.log("Data sent:" + vm.custId + ", " + vm.rentalIds);
                         })
                         .fail(function () {
                             toastr.error("Your returns were not recorded.");
