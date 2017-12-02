@@ -21,6 +21,7 @@ To-Do List:
 * Re-implement random movie selection. [Completed 27/11/2017]
 * Add DatePicker calendar to select dates in new user/movie views. [Completed 27/11/2017]
 * Add video returns capability and returns front-end. [Completed 02/12/2017]
+* Add delete icon to movies in rentals view. [Completed 02/12/2017]
 * Allow admin account to change the privileges of existing accounts.
 * Implement API integration with a movie database (possibly IMDB?) to flesh out movie details pages.
 * Improve the look and feel of front-end (fancy HTML! jQuery and JavaScript practice! Learning!).

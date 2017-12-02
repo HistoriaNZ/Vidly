@@ -37,9 +37,20 @@
 
         $(document).ready(function () {
 
+            window.removeMovie = function(countId, movieId) {
+                $("#" + countId).remove();
+                //remove the movie from the viewmodel object as well
+                var index = vm.movieIds.indexOf(movieId);
+                if (index > -1) {
+                    vm.movieIds.splice(index, 1);
+                }
+            };
+
             var vm = {
                 movieIds: [],
             };
+
+            var counterId = 0;
 
             var customers = new Bloodhound({
                 datumTokenizer: Bloodhound.tokenizers.obj.whitespace('value'),
@@ -78,7 +89,9 @@
                     display: 'name',
                     source: movies
                 }).on("typeahead:select", function (e, movie) {
-                    $('#moviesList').append("<li class='list-group-item'>" + movie.name + "</li>");
+                    $('#moviesList').append("<li id='" + counterId + "' class='list-group-item'>" + movie.name +
+                        "<a href='javascript:removeMovie(" + counterId + ", " + movie.id + ")'><span class='glyphicon glyphicon-remove' style='float:right'></span></a></li>");
+                    counterId += 1;
                     $('#movie').typeahead("val", "");
                     vm.movieIds.push(movie.id);
                 });
@@ -120,4 +133,6 @@
             });
         });
     </script>
+
+
 }
