@@ -41,7 +41,8 @@ namespace Vidly.Controllers.Api
             {
                 return NotFound();
             }
-            var activeRentalDtos = rentals.Include(r => r.Movie).ToList().
+            var activeRentalDtos = rentals.Include(r => r.Movie).
+                Where(r => r.DateReturned == null).ToList().
                Select(Mapper.Map<Rental, ActiveRentalDto>);
 
             return Ok(activeRentalDtos);
@@ -131,18 +132,19 @@ namespace Vidly.Controllers.Api
                 throw new HttpResponseException(HttpStatusCode.BadRequest);
             }
 
-            var rentalsInDb = _context.Rentals.Where(r => returnsDto.RentalIds.Contains(r.Id));
+            var rentalsInDb = _context.Rentals.Include(r => r.Customer).
+                Include(r => r.Movie).Where(r => returnsDto.RentalIds.Contains(r.Id)).
+                ToList();
 
-            int counter = 0;
+            //var rentalInDb = _context.Rentals.SingleOrDefault(r => r.Id == returnsDto.RentalIds[0]);
 
             foreach (var rental in rentalsInDb)
             {
-                counter += 1;
                 rental.DateReturned = DateTime.Now;
-                //WHY IS .SAVECHANGES RETURNING AN HTTP 500 RESPONSE. :(
+                _context.SaveChanges();
             }
 
-            return Ok(counter);
+            return Ok(rentalsInDb);
         }
 
     }

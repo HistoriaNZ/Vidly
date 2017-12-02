@@ -53,21 +53,26 @@
                     display: 'name',
                     source: customers
                 }).on("typeahead:select", function (e, customer) {
+                    $('#rentalsList').empty();
                     vm.custId = customer.id;
                     var rUrl = "/api/rentals/" + vm.custId;
                     $.ajax({
                         url: rUrl,
                         method: "get",
                         success: function (response) {
-                            console.log(response);
-                            $("#rentalsList").append("<div class='btn-group' data-toggle='buttons'>")
-                            $.each(response, function (key, value) {
-                                var rentalDate = new Date(value["dateRented"]).toDateString();
-                                var movieName = value["movie"]["name"]
-                                var rentalString = movieName + ", " + rentalDate;
-                                var rentalId = value["id"];
-                                $("#rentalsList").append("<div><label class='btn btn-primary btn-lg btn-block'><input type='checkbox' id='" + rentalId + "' >" + rentalString + "</label></div>");
-                            });
+                            if (response.length == 0) {
+                                $("#rentalsList").append("<li>There are no active rentals for this customer!</li>");
+                            }
+                            else {
+                                $("#rentalsList").append("<div class='btn-group' data-toggle='buttons'>")
+                                $.each(response, function (key, value) {
+                                    var rentalDate = new Date(value["dateRented"]).toDateString();
+                                    var movieName = value["movie"]["name"]
+                                    var rentalString = movieName + ", " + rentalDate;
+                                    var rentalId = value["id"];
+                                    $("#rentalsList").append("<div><label class='btn btn-primary btn-lg btn-block'><input type='checkbox' id='" + rentalId + "' >" + rentalString + "</label></div>");
+                                })
+                            };
                         }
                     });
                 });
