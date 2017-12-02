@@ -12,6 +12,7 @@ using AutoMapper;
 
 namespace Vidly.Controllers.Api
 {
+    
     public class RentalsController : ApiController
     {
         private ApplicationDbContext _context;
@@ -50,6 +51,7 @@ namespace Vidly.Controllers.Api
         }
 
         [HttpPost]
+        [Authorize(Roles = RoleName.CanManageMovies)]
         public IHttpActionResult Create(NewRentalDto newRental)
         {
             if (!ModelState.IsValid)
@@ -124,6 +126,7 @@ namespace Vidly.Controllers.Api
         */
 
         [HttpPut]
+        [Authorize(Roles = RoleName.CanManageMovies)]
         public IHttpActionResult Return(ReturnsDto returnsDto)
         {
             //return Ok("movie list length: " + rentalDto.movieIds.Count());
