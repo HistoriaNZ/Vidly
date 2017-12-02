@@ -89,6 +89,7 @@ namespace Vidly.Controllers.Api
                 rental.DateRented = DateTime.Now;
                 rental.Customer = customer;
                 rental.Movie = movie;
+                movie.NumberAvailable -= 1;
 
                 _context.Rentals.Add(rental);
             }
@@ -141,6 +142,7 @@ namespace Vidly.Controllers.Api
             foreach (var rental in rentalsInDb)
             {
                 rental.DateReturned = DateTime.Now;
+                rental.Movie.NumberAvailable += 1;
                 _context.SaveChanges();
             }
 

@@ -106,16 +106,24 @@ namespace Vidly.Controllers
             if (movie.Id == 0)
             {
                 movie.DateAdded = DateTime.Now;
+                movie.NumberAvailable = Convert.ToByte(movie.NumberInStock);
                 _context.Movies.Add(movie);
             }
             else
             {
                 var movieInDb = _context.Movies.Single(m => m.Id == movie.Id);
+
+                //Calculate change in stock levels, if any
+                int previousNumberInStock = movieInDb.NumberInStock;
+                int newNumberInStock = movie.NumberInStock;
+                byte moviesStockChanged = Convert.ToByte(newNumberInStock - previousNumberInStock);
+
+                //asign new values to all appropriate fields
                 movieInDb.Name = movie.Name;
                 movieInDb.ReleaseDate = movie.ReleaseDate;
                 movieInDb.GenreId = movie.GenreId;
                 movieInDb.NumberInStock = movie.NumberInStock;
-                //movieInDb.NumberAvailable = movie.NumberInStock;
+                movieInDb.NumberAvailable += Convert.ToByte(moviesStockChanged);
             }
 
             _context.SaveChanges();

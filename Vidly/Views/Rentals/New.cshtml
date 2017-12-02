@@ -99,7 +99,7 @@
                 submitHandler: function () {
                     $.ajax({
                         url: "/api/rentals/",
-                        method: "put",
+                        method: "post",
                         data: vm
                     })
                         .done(function () {
