@@ -103,3 +103,5 @@ C:\Users\Tom\source\website\Vidly\Vidly\obj\Debug\Vidly.Migrations.AddRentalsToA
 C:\Users\Tom\source\website\Vidly\Vidly\obj\Debug\Vidly.Migrations.AddNumberAvailableToMoviesModel.resources
 C:\Users\Tom\source\website\Vidly\Vidly\bin\Elmah.dll
 C:\Users\Tom\source\website\Vidly\Vidly\obj\Debug\Vidly.Migrations.AddCustomerIdAndMovieIdToRentalsExplicitly.resources
+C:\Users\Tom\source\website\Vidly\Vidly\bin\TMDbLib.dll
+C:\Users\Tom\source\website\Vidly\Vidly\bin\TMDbLib.pdb
