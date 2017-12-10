@@ -30,5 +30,7 @@ namespace Vidly.Dtos
         [Required]
         public byte GenreId { get; set; }
 
+        public string TmdbLink { get; set; }
+
     }
 }

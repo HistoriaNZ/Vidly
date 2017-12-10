@@ -35,5 +35,7 @@ namespace Vidly.Models
 
         public byte NumberAvailable { get; set; }
 
+        public string TmdbLink { get; set; }
+
     }
 }

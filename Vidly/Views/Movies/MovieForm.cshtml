@@ -42,6 +42,11 @@ else
         @Html.TextBoxFor(m => m.NumberInStock, new { @class = "form-control" })
         @Html.ValidationMessageFor(m => m.NumberInStock)
     </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.TmdbLink)
+        @Html.TextBoxFor(m => m.TmdbLink, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.TmdbLink)
+    </div>
 
     @Html.HiddenFor(m => m.Id)
     @Html.AntiForgeryToken()

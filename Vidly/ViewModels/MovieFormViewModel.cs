@@ -30,6 +30,9 @@ namespace Vidly.ViewModels
         [Display(Name = "Genre")]
         public byte? GenreId { get; set; }
 
+        [Display(Name = "TMDb Link")]
+        public string TmdbLink { get; set; }
+
         //constructor for a new movie
         public MovieFormViewModel()
         {
@@ -44,6 +47,7 @@ namespace Vidly.ViewModels
             ReleaseDate = movie.ReleaseDate;
             NumberInStock = movie.NumberInStock;
             GenreId = movie.GenreId;
+            TmdbLink = movie.TmdbLink;
         }
     }
 }

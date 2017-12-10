@@ -124,6 +124,7 @@ namespace Vidly.Controllers
                 movieInDb.GenreId = movie.GenreId;
                 movieInDb.NumberInStock = movie.NumberInStock;
                 movieInDb.NumberAvailable += Convert.ToByte(moviesStockChanged);
+                movieInDb.TmdbLink = movie.TmdbLink;
             }
 
             _context.SaveChanges();

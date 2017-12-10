@@ -319,6 +319,10 @@
     <Compile Include="Migrations\201711281542302_AddCustomerIdAndMovieIdToRentalsExplicitly.Designer.cs">
       <DependentUpon>201711281542302_AddCustomerIdAndMovieIdToRentalsExplicitly.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201712100900127_AddTmdbLinkToMovies.cs" />
+    <Compile Include="Migrations\201712100900127_AddTmdbLinkToMovies.Designer.cs">
+      <DependentUpon>201712100900127_AddTmdbLinkToMovies.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
     <Compile Include="Models\ApplicationUser.cs" />
@@ -769,6 +773,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201711281542302_AddCustomerIdAndMovieIdToRentalsExplicitly.resx">
       <DependentUpon>201711281542302_AddCustomerIdAndMovieIdToRentalsExplicitly.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712100900127_AddTmdbLinkToMovies.resx">
+      <DependentUpon>201712100900127_AddTmdbLinkToMovies.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
