@@ -637,6 +637,9 @@
     <Content Include="Scripts\locales\bootstrap-datepicker.zh-CN.min.js" />
     <Content Include="Scripts\locales\bootstrap-datepicker.zh-TW.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\movielist.js" />
+    <Content Include="Scripts\newrental.js" />
+    <Content Include="Scripts\rentalreturn.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\typeahead.bundle.js" />
