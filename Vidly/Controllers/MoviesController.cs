@@ -8,12 +8,14 @@ using Vidly.ViewModels;
 using System.Data.Entity;
 using System.Runtime.Caching;
 
+
 namespace Vidly.Controllers
 {
     public class MoviesController : Controller
     {
         private ApplicationDbContext _context;
         private static Random rand = new Random();
+
 
         public MoviesController()
         {

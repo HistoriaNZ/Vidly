@@ -46,3 +46,21 @@ input.error {
     border: 0px;
     margin: 0px;
 }
+
+#movieImg {
+    border:1px solid black;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+}
+
+#movieDetails {
+    position: relative;
+    height: 285px;
+    overflow: auto;
+    display: block;
+}
+
+#movieDisplayList {
+    font-size: large;
+}
