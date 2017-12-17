@@ -1,12 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 using Vidly.Models;
 using Vidly.ViewModels;
 using System.Data.Entity;
-using System.Runtime.Caching;
+using TMDbLib.Client;
+using System.Configuration;
 
 
 namespace Vidly.Controllers
@@ -15,7 +14,7 @@ namespace Vidly.Controllers
     {
         private ApplicationDbContext _context;
         private static Random rand = new Random();
-
+        private TMDbClient client = new TMDbClient(ConfigurationManager.AppSettings["TMDbApiKey"]);
 
         public MoviesController()
         {

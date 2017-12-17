@@ -3,29 +3,46 @@
 }
 
 <div class="jumbotron">
-    <h1>ASP.NET - @DateTime.Now.ToString()</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+    <h1>Vidly</h1>
+    <p class="lead">My movie app for rentals!</p>
 </div>
 
 <div class="row">
     <div class="col-md-4">
         <h2>Getting started</h2>
         <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
+            Select from the top navigation bar to jump to customer, movie and rental listings
+            and details. Lots of functionality is locked behind two levels of user privilege (for
+            practical reasons). To test the differences between user privileges, select either: <br /><br />
+            "admin@vidly.com" OR "guest@vidly.com". <br /><br /> The default password for test accounts is: <br />
+            "_Password123".
         </p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
+        <p><a class="btn btn-default" href="~/Account/Login">Log In &raquo;</a></p>
     </div>
     <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
+        <h2>Customers</h2>
+        <p>Currently this page is open to all users as long as you are logged in in some way. This
+        is not ideal and I'll be limiting accessing customer information to admin accounts in the
+        near future. Shows tabulated summary of a customer with links to their details page, their payment
+        plan, and a link to delete the customer from the database (!) <br /><br />
+        You will be prompted to log in if you haven't already.</p>
+        <p><a class="btn btn-default" href="~/Customers">Customers &raquo;</a></p>
     </div>
     <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
+        <h2>Movies</h2>
+        <p>Tabulated list of movies. If you're an admin, the list will include delete buttons, and
+        movie links will take you to the edit page where you can change movie details (name, release
+        date, etc). If you're logged in as a non-admin user, movie links will take you to a dynamically
+        generated details page, where you can view pertinent information (but cannot make edits).</p>
+        <p><a class="btn btn-default" href="~/Movies">Movies &raquo;</a></p>
+    </div>
+    <div class="col-md-4">
+        <h2>Rentals</h2>
+        <p>
+            Only available to admin users. Allows the logging of a rental (provided a customer name and
+            a movie). Rentals will be logged in the database and can have their status set to "returned"
+            through the Returns page, available from the top navigation menu.
+        </p>
+        <p><a class="btn btn-default" href="~/Rentals/New">New Rental &raquo;</a></p>
     </div>
 </div>
