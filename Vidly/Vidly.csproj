@@ -247,6 +247,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\Serializer.cs" />
     <Compile Include="Migrations\201711140035351_InitialModel.cs" />
     <Compile Include="Migrations\201711140035351_InitialModel.Designer.cs">
       <DependentUpon>201711140035351_InitialModel.cs</DependentUpon>

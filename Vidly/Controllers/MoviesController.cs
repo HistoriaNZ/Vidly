@@ -4,8 +4,13 @@ using System.Web.Mvc;
 using Vidly.Models;
 using Vidly.ViewModels;
 using System.Data.Entity;
-using TMDbLib.Client;
 using System.Configuration;
+using System.IO;
+using System.Text;
+using System.Xml;
+using TMDbLib.Client;
+using TMDbLib.Objects.General;
+using TMDbLib.Objects.Search;
 
 
 namespace Vidly.Controllers
@@ -14,11 +19,40 @@ namespace Vidly.Controllers
     {
         private ApplicationDbContext _context;
         private static Random rand = new Random();
-        private TMDbClient client = new TMDbClient(ConfigurationManager.AppSettings["TMDbApiKey"]);
 
         public MoviesController()
         {
             _context = new ApplicationDbContext();
+            TMDbClient client = new TMDbClient(ConfigurationManager.AppSettings["TMDbApiKey"]);
+            //FetchConfig(client);
+            //Bug here, read/write permissions when creating
+            //or modifying config xml file.
+        }
+
+        //editing or creating the tmdb config xml file
+        private static void FetchConfig(TMDbClient client)
+        {
+            FileInfo configXml = new FileInfo("tmdbconfig.xml");
+
+            if (configXml.Exists && configXml.LastWriteTimeUtc >= DateTime.UtcNow.AddHours(-1))
+            {
+                Console.WriteLine("Using stored config");
+                string xml = System.IO.File.ReadAllText(configXml.FullName, Encoding.Unicode);
+
+                XmlDocument xmlDoc = new XmlDocument();
+                xmlDoc.LoadXml(xml);
+
+                client.SetConfig(Helpers.Serializer.Deserialize<TMDbConfig>(xmlDoc));
+            }
+            else
+            {
+                Console.WriteLine("Getting new config");
+                client.GetConfig();
+                Console.WriteLine("Storing config");
+                XmlDocument xmlDoc = Helpers.Serializer.Serialize(client.Config);
+                System.IO.File.WriteAllText(configXml.FullName, xmlDoc.OuterXml, Encoding.Unicode);
+
+            }
         }
 
         protected override void Dispose(bool disposing)
